@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>IMS</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    -->
+  </head>
+  <body class="sidebar-mini fixed">
+    <div class="wrapper">
+      <!-- Navbar-->
+      <header class="main-header hidden-print"><a href="home.php" class="logo">IMS</a>
+        <nav class="navbar navbar-static-top">
+          <!-- Sidebar toggle button--><a href="#" data-toggle="offcanvas" class="sidebar-toggle"></a>
+          <!-- Navbar Right Menu-->
+          <div class="navbar-custom-menu">
+            <ul class="top-nav">
+              <!--Notification Menu-->
+
+              <!-- User Menu-->
+              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user fa-lg"></i></a>
+                <ul class="dropdown-menu settings-menu">
+
+                <li><a href="logout.php?logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Side-Nav-->
+      <aside class="main-sidebar hidden-print">
+        <section class="sidebar">
+          <div class="user-panel">
+            <div class="pull-left image"><img src="images/logo.jpg" alt="User Image" class="img-circle"></div>
+            <div class="pull-left info">
+              <p>Admin</p>
+              <p class="designation">University of Jaffna.</p>
+            </div>
+          </div>
+          <!-- Sidebar Menu-->
+          <ul class="sidebar-menu">
+            <li class="active"><a href="home.php"><i class="fa fa-dashboard"></i><span>Home</span></a></li>
+
+            <li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Inventory</span><i class="fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="lab.php"><i class="fa fa-circle-o"></i>Lab</a></li>
+                <li><a href="office.php"><i class="fa fa-circle-o"></i>Office</a></li>
+				<li><a href="fur.php"><i class="fa fa-circle-o"></i>Furniture</a></li>
+                <li><a href="consu.php"><i class="fa fa-circle-o"></i>Consumble</a></li>
+				</ul>
+            </li>
+			   <li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Maintenance</span><i class="fa fa-angle-right"></i></a>
+			   <ul class="treeview-menu">
+                <li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Send</span><i class="fa fa-angle-right"></i></a>
+				 <ul class="treeview-menu">
+                <li><a href="loan.php"><i class="fa fa-circle-o"></i>Loan</a></li>
+                <li><a href="trans.php"><i class="fa fa-circle-o"></i>Transfer</a></li>
+				</ul>
+
+				<li class="treeview"><a href="#"><i class="fa fa-th-list"></i><span>Received</span><i class="fa fa-angle-right"></i></a>
+				 <ul class="treeview-menu">
+                <li><a href="loan_rcvd.php"><i class="fa fa-circle-o"></i>Loan</a></li>
+                <li><a href="trans_rcvd.php"><i class="fa fa-circle-o"></i>Transfer</a></li>
+              </ul>
+			  </ul>
+            </li>
+
+			<li class="treeview"><a href="about.php"><i class="fa fa-th-list"></i><span>About</span><i class="fa fa-angle-right"></i></a>
+          </ul>
+        </section>
+      </aside>
+      <div class="content-wrapper">
+        <div class="page-title">
+          <div>
+            <h1><i class="fa fa-edit"></i> Update Inventory</h1>
+            <p>Insert identification number of the inventory</p>
+          </div>
+          <div>
+            <ul class="breadcrumb">
+              <li><i class="fa fa-home fa-lg"></i></li>
+              <li> Update Inventory</li>
+              <li><a href="trans.php">Transfer Equipment</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="well bs-component">
+                    <form action="updt_transfer.php" method="post" class="form-horizontal">
+                      <fieldset>
+                        <legend>Transfer Equipment</legend>
+                        <div class="form-group">
+                          <label for="inputEmail" class="col-lg-2 control-label">Identification No</label>
+                          <div class="col-lg-10">
+                            <input id="inputEmail" type="text" name="field1" placeholder="UJ/COMP/" class="form-control">
+                          </div>
+                        </div>
+
+						<div class="form-group">
+						<label for="inputEmail" class="col-lg-2 control-label">Select category</label>
+						  <div class="col-lg-10">
+                            <select id="select" class="form-control" name="field2">
+                              <option>Transfer Date</option>
+                              <option>Type</option>
+                              <option>Receive Department</option>
+                            </select>
+                          </div>
+						  </div>
+
+						 <div class="form-group">
+						 <label for="inputEmail" class="col-lg-2 control-label">New entry for update</label>
+                          <div class="col-lg-10">
+                            <input id="inputEmail" type="text" name="field3" placeholder="" class="form-control">
+                          </div>
+						 </div>
+
+
+                        <div class="form-group">
+                          <div class="col-lg-10 col-lg-offset-2">
+                            <button type="reset" class="btn btn-default">Cancel</button>
+                            <input type="submit" id="demoNotify" value="Submit" name="submit" class="btn btn-primary">
+                          </div>
+                        </div>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Javascripts-->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/essential-plugins.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/pace.min.js"></script>
+    <script src="js/main.js"></script>
+	 <script type="text/javascript">
+      $('#demoNotify').click(function(){
+      	$.notify({
+      		title: "Update Complete : ",
+      		message: "Inventory is updated!",
+      		icon: 'fa fa-check'
+      	},{
+      		type: "info"
+      	});
+      });
+
+    </script>
+  </body>
+</html>
